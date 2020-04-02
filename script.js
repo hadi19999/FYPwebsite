@@ -6,7 +6,7 @@ window.onload = function () {
 // console.log(PythonShell)
 const button = document.getElementById('command');
 button.addEventListener('click', function(e) {
-	//command
+	//command for run
 });
 
 

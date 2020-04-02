@@ -25,7 +25,6 @@ app.get('/', function (req, res) {
 })
 router.get('/call-java-app', function (req, res, next){
   //call you function in here
-  //respond with any data you want
   runScript("foobar")
   res.send('Your data here');
   });
@@ -49,45 +48,3 @@ function runScript(param) {
     "--foo", param,
   ]);
 }
-
-// /**
-//  * @param id {String}
-//  * @param ws {WebSocket}
-//  */
-// function runScriptInWebsocket(id, ws) {
-//   const child = runScript("foobar")
-//   child.stdout.on('data', (data) => {
-//     ws.send(`${id}:${data}`);
-//   });
-//   child.stderr.on('data', (data) => {
-//     ws.send(`${id}:error:\n${data}`);
-//   });
-//   child.on('close', () => {
-//     ws.send(`${id}:done`);
-//   });
-// }
-
-// // Init websocket communication
-// //////////////////////////////////////////////////////////////////////
-// let id = 1
-// wss.on('connection', (ws) => {
-//   const thisId = id++;
-//   ws.on('message', (message) => {
-//     ws.send(`You sent -> ${message}`);
-//     if ("run" === message) {
-//       runScriptInWebsocket(thisId, ws)
-//     }
-//   });
-//   ws.send('Connection with WebSocket server initialized');
-// });
-
-// // Start server
-// //////////////////////////////////////////////////////////////////////
-
-// server.listen(PORT, () => {
-//   console.log('\n');
-//   console.log('+--------------------------')
-//   console.log(' PID %d', process.pid)
-//   console.log(' Listening on port', PORT)
-//   console.log('+--------------------------')
-// })
