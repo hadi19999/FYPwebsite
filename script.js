@@ -12,6 +12,11 @@ button.addEventListener('click', function(e) {
 var dataPoints = [];
 var chart = new CanvasJS.Chart("chartContainer",{
 	zoomEnabled:true,
+	axisX:{
+		labelFormatter: function(e){
+			return  "x: " + e.value;
+		}
+	},
     title:{
         text:"Accuracy"
     },
@@ -20,9 +25,9 @@ var chart = new CanvasJS.Chart("chartContainer",{
         dataPoints : dataPoints,
     }]
 });
-$.getJSON("zClosurez.json", function(data) {  
+$.getJSON("graph.json", function(data) {  
     $.each(data, function(key, value){
-        dataPoints.push({x: value[1], y: parseInt(value[2])});
+        dataPoints.push({x: value[1], y: parseInt(value[2]*100)});
     });
     chart.render();
 });
