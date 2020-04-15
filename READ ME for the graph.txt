@@ -1,2 +1,4 @@
 pip install -U tensorboard
-tensorboard dev upload --logdir=LOCATION(change) {logs}
+tensorboard dev upload --logdir=LOCATIONofThefile(change) {logs}
+
+download the json file and copy it to the project under the name "graph.json"
