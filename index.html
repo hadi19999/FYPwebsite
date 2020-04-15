@@ -20,8 +20,7 @@
   <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
 
-  <!-- Plugin CSS -->
-  <link rel="stylesheet" href="device-mockups/device-mockups.min.css">
+
 
   <!-- Custom styles for this template -->
   <link href="css/new-age.min.css" rel="stylesheet">
@@ -65,17 +64,21 @@
             <button id="command" class="btn btn-outline btn-xl js-scroll-trigger" onclick="runSync()">Run</button>
             <button id="command_evaluate" class="btn btn-outline btn-xl js-scroll-trigger" onclick="Evaluate()">Evaluate</button>
             <a href="#graph" class="btn btn-outline btn-xl js-scroll-trigger">Graph</a>
+            <a href="https://tensorboard.dev/experiment/976wKsKuQ9Gb61Z2612DhA/#scalars" class="btn btn-outline btn-xl js-scroll-trigger" target="_blank">Graph 2</a>
             
           </div>
         </div>
       </div>
     </div>
   </header>
-
+  <script type="text/javascript" src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
   <section class="download text-center" id="graph">
     <div class="container">
       <div id="chartContainer" style="height: 370px; width: 100%;"></div>
-      <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+      <!-- <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script> -->
+      <!-- <a href="https://tensorboard.dev/experiment/976wKsKuQ9Gb61Z2612DhA/#scalars" target="_blank" ><img src="zClosurez.svg" height="500" width="800" /></a> -->
+      <div id="chartContainer" style="height: 300px; width: 100%;">
     </div>
   </section>
 
@@ -85,6 +88,18 @@
       <div class="row h-100">
         <div class="col-lg-7 my-auto">
           <div class="header-content mx-auto">
+            <form action="/" method="get">
+              <label for="instruction_word">Instruction:</label>
+              <input style="border-radius: 10px;" type="text" id="instruction_word" name="instruction_word"><br><br>
+              <label for="instruction_x">X:</label>
+              <input style="border-radius: 10px;" type="text" id="instruction_x" name="instruction_x"><br><br>
+              <label for="instruction_y">Y:</label>
+              <input style="border-radius: 10px;" type="text" id="instruction_y" name="instruction_y"><br><br>
+              <label for="instruction_y">Z:</label>
+              <input style="border-radius: 10px;" type="text" id="instruction_z" name="instruction_z"><br><br>
+              <input class="btn btn-outline btn-xl js-scroll-trigger" type="submit" value="Go">
+            </form>
+            <!-- <form action="/action_page" method="get"></form>
             <label class=" col-md-3 ">Instruction: </label>
           <input style="border-radius: 10px;" class=" col-md-3" id="instruction_word">
             <br>
@@ -98,7 +113,10 @@
             <input style="border-radius: 10px;"  id="instruction_z">
             <br>
             <a href="#graph" class="btn btn-outline btn-xl js-scroll-trigger">Go</a>
-          </div>
+            <input class="btn btn-outline btn-xl js-scroll-trigger" type="submit" value="Go">
+          
+          </form> -->
+        </div>
         </div>
         <div class="col-lg-5 my-auto">
           <div class="device-container">
@@ -156,5 +174,4 @@
 
   }
 </script>
-
 </html>
